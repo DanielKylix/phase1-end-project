@@ -1,0 +1,119 @@
+.sign {
+    width: 75% !important;
+    padding: 20px;
+    background-color: aliceblue;
+}
+.sign img {
+    border-radius: 20px;
+    margin-top: 20%;
+    margin-left: 2%;
+
+}
+
+.sign .login {
+    margin-top: 10% !important;
+}
+.sign .login-header {
+    margin-top: 15% !important;
+}
+.sign .icon {
+    font-size: 35px;
+    color: red;
+}
+.navbar {
+    background-color: transparent;
+    padding: 20px;
+}
+.navbar-collapse {
+    margin-left: 15%;
+    text-decoration: none !important;
+    list-style-type: none !important;
+}
+.nav-item  {
+    color: rgb(29, 59, 143);
+    font-size: 17px;
+    text-decoration: none !important;
+    list-style-type: none !important;
+}
+.nav-item{
+    
+    text-decoration: none !important;
+    list-style-type: none !important;
+    padding-left: 20px;
+}
+Link li{
+    text-decoration: none !important;
+    list-style-type: none !important; 
+}
+.navbar-brand {
+    color: rgb(255, 255, 255);
+
+}
+.navbar img {
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+}
+
+.navbar .btn {
+    margin-left: 20px;
+}
+.navbar-header {
+    color: rgb(19, 231, 150);
+}
+.booking {
+    padding: 20px !important;
+}
+.booking .card {
+    padding: 10px !important;
+    margin: 10px;
+}
+.vendor-booking {
+    padding: 20px;
+    width: 40%;
+}
+.vendor-booking h5 {
+    padding: 10px;
+}
+.vendor-booking .card {
+    padding: 20px;
+}
+.vendor-booking textarea {
+    height: 120px !important;
+}
+.banner .buttons {
+    margin-top: 15%;
+    padding: 20px;
+}
+.banner .buttons .btn {
+    margin: 10px;
+    width: 50%;
+}
+.banner {
+    margin-top: 5% !important;
+    width: 75%;
+    background-color: aliceblue;
+    padding: 20px;
+}
+@media screen and (max-width:920px) {
+    .banner img {
+       display: none;
+    
+    }
+    .banner {
+        margin-top: 30% !important;
+        width: 90%;
+    }
+    .banner .buttons {
+        margin-top: 0%;
+        padding: 20px;
+    }
+    .vendor-booking {
+        width: 100%;
+        margin-top: 10% !important;
+    }
+    .banner .buttons .btn {
+        margin: 10px;
+        width: 100% !important;
+    }
+}

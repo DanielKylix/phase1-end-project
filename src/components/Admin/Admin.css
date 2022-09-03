@@ -1,0 +1,20 @@
+.graphs {
+    width: 90% !important;
+    padding: 20px;
+}
+.graphs .card {
+    padding: 50px;
+}
+.update {
+        width: 50% !important;
+        padding: 20px;
+        background-color: aliceblue;
+}
+.graph-card {
+    height: 400px;
+    background-color: azure;
+}
+.card-data {
+    background-color: azure;
+    margin-bottom: 20px;
+}
