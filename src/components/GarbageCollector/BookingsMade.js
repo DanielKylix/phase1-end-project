@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useNavigate, useLocation } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import {
   onDeleteRequest,
   onPatchRequest,
@@ -18,14 +18,13 @@ const BookingsMade = () => {
   const [user, setUser] = useState(
     JSON.parse(localStorage.getItem("vendorprofile"))
   );
-  const location = useLocation();
   const [data, setData] = useState([]);
   const navigate = useNavigate();
 
   useEffect(() => {
     setUser(JSON.parse(localStorage.getItem("vendorprofile")));
     requestsMade(user.json.result._id, setData);
-  }, [location]);
+  }, [user.json.result._id]);
 
   const onClick = (id) => {
     onPatchRequest(id);

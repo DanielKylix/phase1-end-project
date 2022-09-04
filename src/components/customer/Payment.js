@@ -12,15 +12,14 @@ const CustomerPayment = () => {
   const [vendor, setVendor] = useState(
     JSON.parse(localStorage.getItem("VendorID"))
   );
-  const [booking, setBooking] = useState(
-    JSON.parse(localStorage.getItem("BookID"))
-  );
+  // const [booking, setBooking] = useState(
+  //   JSON.parse(localStorage.getItem("BookID"))
+  // );
   const [isLoading, setIsLoading] = useState(false);
 
   const location = useLocation();
   useEffect(() => {
     setUser(JSON.parse(localStorage.getItem("customerprofile")));
-    setBooking(JSON.parse(localStorage.getItem("BookID")));
     setVendor(JSON.parse(localStorage.getItem("VendorID")));
   }, [location]);
 

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import AdminNavbar from "../Navbar/adminNavbar/Navbar";
 import axios from "axios";
 import "./Admin.css";
+import { api } from "../../Data/Api";
 
 const CustomersData = () => {
   const [customerData, setCustomerData] = useState([]);
@@ -11,7 +12,7 @@ const CustomersData = () => {
   }, []);
   const getData = async () => {
     try {
-      const response = await fetch("http://localhost:5000/admin/customers");
+      const response = await fetch(`${api}/admin/customers`);
       const result = await response.json();
       console.log(result.body);
       setCustomerData(result.body);
@@ -20,7 +21,7 @@ const CustomersData = () => {
     }
   };
   const onDelete = async (id) => {
-    axios.delete(`http://localhost:5000/admin/customers/${id}`);
+    axios.delete(`${api}/admin/customers/${id}`);
   };
   return (
     <div>

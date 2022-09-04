@@ -5,6 +5,8 @@ import { Chart as ChartJS, registerables } from "chart.js";
 import CountUp from "react-countup";
 import "./Admin.css";
 
+import { api } from "../../Data/Api";
+
 ChartJS.register(...registerables);
 
 const Dashboard = () => {
@@ -12,15 +14,13 @@ const Dashboard = () => {
   const [vendorData, setVendorData] = useState([]);
   const [bookingData, setBookingData] = useState([]);
   const [bookedData, setBookedData] = useState([]);
-  const [paymentsMade, setPaymentsMade] = useState([]);
-  const [paymentsReceived, setPaymentsReceived] = useState([]);
 
   useEffect(() => {
     getData();
   }, []);
   const getData = async () => {
     try {
-      const response = await fetch("http://localhost:5000/admin/customers");
+      const response = await fetch(`${api}/admin/customers`);
       const result = await response.json();
       console.log(result.count);
       setCustomerData(result);
@@ -28,7 +28,7 @@ const Dashboard = () => {
       console.log(error);
     }
     try {
-      const response = await fetch("http://localhost:5000/admin/vendors");
+      const response = await fetch(`${api}/admin/vendors`);
       const result2 = await response.json();
       console.log(result2.count);
       setVendorData(result2);
@@ -36,7 +36,7 @@ const Dashboard = () => {
       console.log(error);
     }
     try {
-      const response = await fetch("http://localhost:5000/admin/bookings");
+      const response = await fetch(`${api}/admin/bookings`);
       const result3 = await response.json();
       console.log(result3.count);
       setBookingData(result3);
@@ -44,23 +44,9 @@ const Dashboard = () => {
       console.log(error);
     }
     try {
-      const response = await fetch("http://localhost:5000/admin/booked");
+      const response = await fetch(`${api}/admin/booked`);
       const result4 = await response.json();
       setBookedData(result4);
-    } catch (error) {
-      console.log(error);
-    }
-    try {
-      const response = await fetch("http://localhost:5000/admin/sent");
-      const result5 = await response.json();
-      setPaymentsMade(result5.count);
-    } catch (error) {
-      console.log(error);
-    }
-    try {
-      const response = await fetch("http://localhost:5000/admin/received");
-      const result6 = await response.json();
-      setPaymentsReceived(result6.count);
     } catch (error) {
       console.log(error);
     }

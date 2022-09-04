@@ -19,7 +19,7 @@ const AcceptedPayments = () => {
   console.log(user.json.result._id);
   useEffect(() => {
     getAcceptedPayments(user.json.result._id, setData);
-  }, []);
+  }, [user.json.result._id]);
 
   useEffect(() => {
     setUser(JSON.parse(localStorage.getItem("customerprofile")));

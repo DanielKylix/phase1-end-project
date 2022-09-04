@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useNavigate, useLocation } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { onPatchPayment, payments } from "../../Data/vendorRequests";
 
 import VendorNavbar from "../Navbar/vendorNavbar/Navbar";
@@ -14,14 +14,13 @@ const PaymentsMade = () => {
   const [user, setUser] = useState(
     JSON.parse(localStorage.getItem("vendorprofile"))
   );
-  const location = useLocation();
   const [data, setData] = useState([]);
   const navigate = useNavigate();
 
   useEffect(() => {
     setUser(JSON.parse(localStorage.getItem("vendorprofile")));
     payments(user.json.result._id, setData);
-  }, [location]);
+  }, [user.json.result._id]);
 
   const onClick = (id) => {
     onPatchPayment(id);

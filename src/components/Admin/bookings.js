@@ -3,6 +3,7 @@ import AdminNavbar from "../Navbar/adminNavbar/Navbar";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import "./Admin.css";
+import { api } from "../../Data/Api";
 
 const BookingsData = () => {
   const options = {
@@ -20,7 +21,7 @@ const BookingsData = () => {
   }, []);
   const getData = async () => {
     try {
-      const response = await fetch("http://localhost:5000/admin/bookings");
+      const response = await fetch(`${api}/admin/bookings`);
       const result = await response.json();
       console.log(result.body);
       setBookingData(result.body);
@@ -29,7 +30,7 @@ const BookingsData = () => {
     }
   };
   const onDelete = async (id) => {
-    axios.delete(`http://localhost:5000/admin/bookings/${id}`);
+    axios.delete(`${api}/admin/bookings/${id}`);
     navigate(0);
   };
 

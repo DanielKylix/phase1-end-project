@@ -14,7 +14,7 @@ const AcceptedBookings = () => {
 
   useEffect(() => {
     getAcceptedRequests(user.json.result._id, setData);
-  }, []);
+  }, [user.json.result._id]);
 
   useEffect(() => {
     // const token =user?.token;

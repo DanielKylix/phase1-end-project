@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { useLocation } from "react-router-dom";
 import { acceptedRequests } from "../../Data/vendorRequests";
 import VendorNavbar from "../Navbar/vendorNavbar/Navbar";
 const AcceptedOrders = () => {
@@ -13,14 +12,12 @@ const AcceptedOrders = () => {
   const [user, setUser] = useState(
     JSON.parse(localStorage.getItem("vendorprofile"))
   );
-  const location = useLocation();
   const [data, setData] = useState([]);
-  console.log(user.json._id);
 
   useEffect(() => {
     setUser(JSON.parse(localStorage.getItem("vendorprofile")));
     acceptedRequests(user.json.result._id, setData);
-  }, [location]);
+  }, [user.json.result._id]);
 
   return (
     <div>

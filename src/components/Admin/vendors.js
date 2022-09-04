@@ -3,6 +3,7 @@ import AdminNavbar from "../Navbar/adminNavbar/Navbar";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import "./Admin.css";
+import { api } from "../../Data/Api";
 
 const VendorsData = () => {
   const [vendorData, setVendorData] = useState([]);
@@ -13,7 +14,7 @@ const VendorsData = () => {
   }, []);
   const getData = async () => {
     try {
-      const response = await fetch("http://localhost:5000/admin/vendors");
+      const response = await fetch(`${api}/admin/vendors`);
       const result = await response.json();
       console.log(result.body);
       setVendorData(result.body);
@@ -22,7 +23,7 @@ const VendorsData = () => {
     }
   };
   const onDelete = async (id) => {
-    axios.delete(`http://localhost:5000/admin/vendors/${id}`);
+    axios.delete(`${api}/admin/vendors/${id}`);
     navigate(0);
   };
   return (

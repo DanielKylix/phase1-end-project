@@ -66,8 +66,9 @@ const CustomerBooking = () => {
     <div>
       <CustomerNavbar />
       <div className="container vendor-booking mt-2">
+        {errors && <p className="text-danger mb-2">{errors}</p>}
         <h5 className="text-center">
-          Make a booking from, {currentvendorName.name}
+          Make a request to, {currentvendorName.name}
         </h5>
         <div className="card">
           <form onSubmit={onSubmit}>

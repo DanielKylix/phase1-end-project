@@ -25,7 +25,7 @@ const VendorNavbar = () => {
 
   useEffect(() => {
     acceptedRequests(user.json.result._id, setData);
-  }, []);
+  }, [user.json.result._id]);
 
   return (
     <div>
@@ -98,16 +98,17 @@ const VendorNavbar = () => {
                   >
                     <a
                       className="nav-link "
-                      href="#"
+                      href="#home"
                       id="navbarDropdown"
                       role="button"
                       data-toggle="dropdown"
                       aria-haspopup="true"
                       aria-expanded="false"
+                      style={{ color: "white" }}
                     >
                       <i
                         className="fa fa-user"
-                        style={{ fontSize: "28px" }}
+                        style={{ fontSize: "28px", color: "white" }}
                       ></i>{" "}
                       Profile
                     </a>
